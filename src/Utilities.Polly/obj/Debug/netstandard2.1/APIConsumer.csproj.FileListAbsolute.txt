@@ -1,0 +1,9 @@
+C:\Mine\Coolblue\net-interviewing-project-v2\src\APIConsumer\bin\Debug\netstandard2.1\APIConsumer.deps.json
+C:\Mine\Coolblue\net-interviewing-project-v2\src\APIConsumer\bin\Debug\netstandard2.1\APIConsumer.dll
+C:\Mine\Coolblue\net-interviewing-project-v2\src\APIConsumer\bin\Debug\netstandard2.1\APIConsumer.pdb
+C:\Mine\Coolblue\net-interviewing-project-v2\src\APIConsumer\obj\Debug\netstandard2.1\APIConsumer.AssemblyInfoInputs.cache
+C:\Mine\Coolblue\net-interviewing-project-v2\src\APIConsumer\obj\Debug\netstandard2.1\APIConsumer.AssemblyInfo.cs
+C:\Mine\Coolblue\net-interviewing-project-v2\src\APIConsumer\obj\Debug\netstandard2.1\APIConsumer.csproj.CoreCompileInputs.cache
+C:\Mine\Coolblue\net-interviewing-project-v2\src\APIConsumer\obj\Debug\netstandard2.1\APIConsumer.dll
+C:\Mine\Coolblue\net-interviewing-project-v2\src\APIConsumer\obj\Debug\netstandard2.1\APIConsumer.pdb
+C:\Mine\Coolblue\net-interviewing-project-v2\src\APIConsumer\obj\Debug\netstandard2.1\APIConsumer.csprojAssemblyReference.cache
