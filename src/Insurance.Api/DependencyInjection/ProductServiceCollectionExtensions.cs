@@ -1,4 +1,6 @@
-﻿using Insurance.Api.BusinessRules.Insurance;
+﻿using System.Collections.Generic;
+using Insurance.Api.BusinessRules.Insurance;
+using Insurance.Api.External.Models;
 using Insurance.Api.Services;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -9,7 +11,8 @@ namespace Insurance.Api.DependencyInjection
         public static IServiceCollection AddProductServices(this IServiceCollection services)
         {
             services.AddScoped<IProductService, ProductService>();
-            services.AddScoped<IInsuranceCalculator, InsuranceCalculator>();
+            services.AddScoped(typeof(IInsuranceCalculator<ProductDto>), typeof(ProductInsuranceCalculator));
+            services.AddScoped(typeof(IInsuranceCalculator<List<ProductDto>>), typeof(OrderInsuranceCalculator));
             return services;
         }
     }

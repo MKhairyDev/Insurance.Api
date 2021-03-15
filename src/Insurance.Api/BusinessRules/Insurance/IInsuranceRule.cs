@@ -2,9 +2,9 @@
 
 namespace Insurance.Api.BusinessRules.Insurance
 {
-    public interface IInsuranceRule
+    public interface IInsuranceRule<in T>
     {
-        bool Match(ProductDto product);
+        bool Match(T entity);
         float Calculate();
     }
 }

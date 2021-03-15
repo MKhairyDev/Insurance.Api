@@ -11,7 +11,7 @@ namespace Insurance.Api.UnitTests.BusinessRules.Tests.TestData
             get
             {
 
-                //Given Sales Price Between less that 500 Euros Should Add zero ToInsurance Cost
+                //Given Sales Price Between less that 500 Euros Should Add zero To Insurance Cost
                 yield return new TestCaseData(
                     new ProductDto {Name = "product_1",ProductTypeDto = new ProductTypeDto {CanBeInsured = true}, SalesPrice = 300}, 0);
 

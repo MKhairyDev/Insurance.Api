@@ -30,19 +30,19 @@ namespace Utilities.Polly.Policies
             {
                 case PolicyName.Bulkhead:
                     return new BulkheadPolicy(_logger).PolicyAsync;
-                case PolicyName.Timeout:
-                    return new TimeoutPolicy().PolicyAsync;
+
                 case PolicyName.Retry:
                     return new RetryPolicy(_logger).PolicyAsync;
+
                 case PolicyName.CircuitBreaker:
                     return new CircuitBreakerPolicy(_logger).PolicyAsync;
-                case PolicyName.FallBack:
-                    return new FallBackPolicy(_logger).PolicyAsync;
+
                 case PolicyName.WrapAll:
                     return new WrapPolicy(_logger, new BulkheadPolicy(_logger).PolicyAsync,
                         new TimeoutPolicy().PolicyAsync,
                         new RetryPolicy(_logger).PolicyAsync, new CircuitBreakerPolicy(_logger).PolicyAsync,
                         new FallBackPolicy(_logger).PolicyAsync).PolicyAsync;
+
                 case PolicyName.NoOpAsync:
                     return new NoOpAsyncPolicy().PolicyAsync;
                 default:

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Insurance.Api.External;
 using Insurance.Api.External.Models;
@@ -18,7 +19,26 @@ namespace Insurance.Api.Services
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
+        public async Task<List<ProductDto>> GetProductsWithProductTypeAsync(List<int> products)
+        {
+            var productsList = new List<ProductDto>();
+            foreach (var productId in products)
+            {
+              var product=  await ProductWithProductTypeAsync(productId);
+              if (product == null)
+                  return null;
+              productsList.Add(product);
+            }
+
+            return productsList;
+        }
+
         public async Task<ProductDto> GetProductWithProductTypeAsync(int productId)
+        {
+            return await ProductWithProductTypeAsync(productId);
+        }
+
+        private async Task<ProductDto> ProductWithProductTypeAsync(int productId)
         {
             try
             {

@@ -1,24 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Insurance.Api.Configuration;
 using Insurance.Api.External.Models;
+using Microsoft.Extensions.Options;
 
 namespace Insurance.Api.BusinessRules.Insurance
 {
-    public class SalesPriceAggregationRule : IInsuranceRule
+    public class SalesPriceAggregationRule : IInsuranceRule<ProductDto>
     {
-        private readonly List<IInsuranceRule> _insuranceRules;
-        private IInsuranceRule _matchedRule;
+        private readonly IOptionsMonitor<SalesPriceConfig> _salesPriceConfig;
+        private readonly List<IInsuranceRule<ProductDto>> _insuranceRules;
+        private IInsuranceRule<ProductDto> _matchedRule;
         private ProductDto _product;
 
-        public SalesPriceAggregationRule()
+        public SalesPriceAggregationRule(IOptionsMonitor<SalesPriceConfig> salesPriceConfig)
         {
-            _insuranceRules = new List<IInsuranceRule>
+            _salesPriceConfig = salesPriceConfig;
+            _insuranceRules = new List<IInsuranceRule<ProductDto>>
             {
                 //todo:those values should be configured somewhere!
-                new LessThanRule(targetValue:500,insuranceValueToAdd: 0),
-                new RangeRule(targetMinValue:500,targetMaxValue: 2000,insuranceValueToAdd: 1000),
-                new BiggerThanRule(targetValue:2000,insuranceValueToAdd: 2000)
+                new LessThanRule(_salesPriceConfig),
+                new RangeRule(_salesPriceConfig),
+                new BiggerThanRule(_salesPriceConfig)
             };
         }
 
@@ -39,7 +43,7 @@ namespace Insurance.Api.BusinessRules.Insurance
             return _matchedRule?.Calculate() ?? 0f;
         }
 
-        private IInsuranceRule RetrieveMatchedRule(ProductDto product)
+        private IInsuranceRule<ProductDto> RetrieveMatchedRule(ProductDto product)
         {
             return _insuranceRules.FirstOrDefault(rule => rule.Match(product));
         }

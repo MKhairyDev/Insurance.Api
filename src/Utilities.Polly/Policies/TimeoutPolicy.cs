@@ -3,12 +3,12 @@ using Polly;
 
 namespace Utilities.Polly.Policies
 {
-    public class TimeoutPolicy: IPolicySetup
+    public class TimeoutPolicy: IPolicyWrapper
     {
         public IAsyncPolicy<HttpResponseMessage> PolicyAsync => Setup();
-        private static IAsyncPolicy<HttpResponseMessage> Setup()
+        private IAsyncPolicy<HttpResponseMessage> Setup()
         {
-            return Policy.TimeoutAsync<HttpResponseMessage>(5);
+            return Policy.TimeoutAsync<HttpResponseMessage>(3);
         }
     }
 }

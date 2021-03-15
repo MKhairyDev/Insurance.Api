@@ -1,27 +1,30 @@
 ﻿using System;
+using Insurance.Api.Configuration;
 using Insurance.Api.External.Models;
+using Microsoft.Extensions.Options;
 
 namespace Insurance.Api.BusinessRules.Insurance
 {
-    public class BiggerThanRule : IInsuranceRule
+    public class BiggerThanRule : IInsuranceRule<ProductDto>
     {
-        private readonly int _targetValue;
-        private readonly int _insuranceValueToAdd;
-        public BiggerThanRule(int targetValue, int insuranceValueToAdd)
+        private readonly SalesPriceConfig _salesPriceConfig;
+
+        public BiggerThanRule(IOptionsMonitor<SalesPriceConfig> salesConfig)
         {
-            _targetValue = targetValue;
-            _insuranceValueToAdd = insuranceValueToAdd;
+            if (salesConfig == null)
+                throw new ArgumentNullException(nameof(salesConfig));
+            _salesPriceConfig = salesConfig.Get(SalesPriceConfig.BiggerThanRule);
         }
         public bool Match(ProductDto product)
         {
             if (product == null)
                 throw new ArgumentNullException(nameof(product));
-            return product.ProductTypeDto.CanBeInsured && product.SalesPrice >_targetValue;
+            return product.ProductTypeDto.CanBeInsured && product.SalesPrice >= _salesPriceConfig.MaxValue;
         }
 
         public float Calculate()
         {
-            return _insuranceValueToAdd;
+            return _salesPriceConfig.InsuranceValueToAdd;
         }
     }
 }

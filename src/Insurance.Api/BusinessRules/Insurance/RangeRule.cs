@@ -1,30 +1,31 @@
 ﻿using System;
+using Insurance.Api.Configuration;
 using Insurance.Api.External.Models;
+using Microsoft.Extensions.Options;
 
 namespace Insurance.Api.BusinessRules.Insurance
 {
-    public class RangeRule : IInsuranceRule
+    public class RangeRule : IInsuranceRule<ProductDto>
     {
-        private readonly int _targetMinValue;
-        private readonly int _targetMaxValue;
-        private readonly int _insuranceValueToAdd;
-        public RangeRule(int targetMinValue,int targetMaxValue,int insuranceValueToAdd)
+        private readonly SalesPriceConfig _salesPriceConfig;
+
+        public RangeRule(IOptionsMonitor<SalesPriceConfig> salesConfig)
         {
-            _targetMinValue = targetMinValue;
-            _targetMaxValue = targetMaxValue;
-            _insuranceValueToAdd = insuranceValueToAdd;
+            if (salesConfig == null)
+                throw new ArgumentNullException(nameof(salesConfig));
+            _salesPriceConfig = salesConfig.Get(SalesPriceConfig.RangeRule);
         }
 
         public bool Match(ProductDto product)
         {
             if (product == null)
                 throw new ArgumentNullException(nameof(product));
-            return product.ProductTypeDto.CanBeInsured && product.SalesPrice >_targetMinValue&& product.SalesPrice<_targetMaxValue;
+            return product.ProductTypeDto.CanBeInsured && product.SalesPrice >= _salesPriceConfig .MinValue&& product.SalesPrice< _salesPriceConfig.MaxValue;
         }
 
         public float Calculate()
         {
-            return _insuranceValueToAdd;
+            return _salesPriceConfig.InsuranceValueToAdd;
         }
     }
 }

@@ -15,13 +15,11 @@ namespace Insurance.Api.External
     public class ProductApiClient : IProductApiClient
     {
         private readonly HttpClient _client;
-       // private readonly IPolicyService _policyService;
         private readonly CancellationTokenSource _cancellationTokenSource;
         public ProductApiClient(HttpClient client, 
             IOptionsMonitor<ExternalServicesConfig> options)
         {
             _client = client ?? throw new ArgumentNullException(nameof(client));
-          //  _policyService = policyService ?? throw new ArgumentNullException(nameof(policyService));
             var productApiConfig = options ?? throw new ArgumentNullException(nameof(options));
             _cancellationTokenSource = new CancellationTokenSource();
             var externalServicesConfig = productApiConfig.Get(ExternalServicesConfig.ProductApi);
@@ -61,7 +59,6 @@ namespace Insurance.Api.External
             which could be used for another work and this does improve the scalability of our application.
             "ResponseHeadersRead" is used blow instead the default option to be able to start the operation as soon as possible.
              */
-            // using (var response = await _policyService.AllPolicyWrapAsync.ExecuteAsync(() =>
             var response = await _client.SendAsync(httpRequestMessage, HttpCompletionOption.ResponseHeadersRead,
                 cancellationToken);
             

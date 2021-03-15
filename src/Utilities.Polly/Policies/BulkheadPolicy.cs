@@ -6,7 +6,7 @@ using Polly;
 
 namespace Utilities.Polly.Policies
 {
-    public  class BulkheadPolicy: IPolicySetup
+    public  class BulkheadPolicy: IPolicyWrapper
     {
         private static ILogger _logger;
         public BulkheadPolicy(ILogger logger)

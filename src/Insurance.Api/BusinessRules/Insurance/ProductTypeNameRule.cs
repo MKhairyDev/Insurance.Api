@@ -1,23 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Insurance.Api.Configuration;
 using Insurance.Api.External.Models;
+using Microsoft.Extensions.Options;
 
 namespace Insurance.Api.BusinessRules.Insurance
 {
-    public class ProductTypeNameRule : IInsuranceRule
+    public class ProductTypeNameRule : IInsuranceRule<ProductDto>
     {
-        private readonly int _insuranceValueToAdd;
-        private readonly IEnumerable<string> _lookupCollection;
-        private readonly IInsuranceRule _salesPriceCalculator;
+        private readonly ProductTypeConfig _productConfig;
+        private readonly IInsuranceRule<ProductDto> _salesPriceCalculator;
         private bool _isSalesPriceCalculator;
         private ProductDto _product;
 
-        public ProductTypeNameRule(int insuranceValueToAdd, IEnumerable<string> lookupCollection,
-            IInsuranceRule salesPriceCalculator)
+        public ProductTypeNameRule(IOptionsMonitor<ProductTypeConfig>productConfig,
+            IInsuranceRule<ProductDto> salesPriceCalculator)
         {
-            _insuranceValueToAdd = insuranceValueToAdd;
-            _lookupCollection = lookupCollection;
+            if (productConfig == null)
+                throw new ArgumentNullException(nameof(productConfig));
+            _productConfig = productConfig.Get(ProductTypeConfig.ProductTypeRule);
             _salesPriceCalculator = salesPriceCalculator;
         }
 
@@ -25,7 +27,7 @@ namespace Insurance.Api.BusinessRules.Insurance
         {
             _product = product ?? throw new ArgumentNullException(nameof(product));
             var isMatch = _product.ProductTypeDto.CanBeInsured &&
-                          _lookupCollection.Contains(_product.ProductTypeDto.Name);
+                          _productConfig.ProductTypesLookup.Contains(_product.ProductTypeDto.Name, StringComparer.CurrentCultureIgnoreCase);
             if (isMatch) _isSalesPriceCalculator = _salesPriceCalculator.Match(product);
 
             return isMatch;
@@ -34,8 +36,8 @@ namespace Insurance.Api.BusinessRules.Insurance
         public float Calculate()
         {
             return _isSalesPriceCalculator
-                ? _insuranceValueToAdd + _salesPriceCalculator.Calculate()
-                : _insuranceValueToAdd;
+                ? _productConfig.InsuranceValueToAdd + _salesPriceCalculator.Calculate()
+                : _productConfig.InsuranceValueToAdd;
         }
     }
 }
