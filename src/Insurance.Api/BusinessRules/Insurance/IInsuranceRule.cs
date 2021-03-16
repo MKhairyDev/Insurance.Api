@@ -1,6 +1,4 @@
-﻿using Insurance.Api.External.Models;
-
-namespace Insurance.Api.BusinessRules.Insurance
+﻿namespace Insurance.Api.BusinessRules.Insurance
 {
     public interface IInsuranceRule<in T>
     {

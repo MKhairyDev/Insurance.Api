@@ -1,10 +1,6 @@
 ﻿using Insurance.Api.BusinessRules.Insurance;
-using Insurance.Api.Configuration;
 using Insurance.Api.External.Models;
 using Insurance.Api.UnitTests.BusinessRules.Tests.TestData;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Options;
-using Moq;
 using NUnit.Framework;
 
 namespace Insurance.Api.UnitTests.BusinessRules.Tests
@@ -12,15 +8,15 @@ namespace Insurance.Api.UnitTests.BusinessRules.Tests
     [TestFixture]
     public class ProductInsuranceCalculatorTests : InsuranceBase
     {
-
-        private ProductInsuranceCalculator _insuranceCalculator;
-
         [SetUp]
         public void PreTextInitialization()
         {
             _insuranceCalculator = new ProductInsuranceCalculator(salesPriceConfig: SalesConfigMock.Object,
                 productTypeConfig: ProductConfigMock.Object);
         }
+
+        private ProductInsuranceCalculator _insuranceCalculator;
+
         [Test]
         [TestCaseSource(sourceType: typeof(SalesPriceTestCaseData),
             sourceName: nameof(SalesPriceTestCaseData.ParameterData))]
@@ -46,6 +42,5 @@ namespace Insurance.Api.UnitTests.BusinessRules.Tests
             //Assert
             Assert.AreEqual(expected: expectedValue, actual: actualValue);
         }
-
     }
 }

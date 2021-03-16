@@ -15,12 +15,10 @@ namespace Insurance.Api.UnitTests.BusinessRules.Tests
     {
 
         private OrderInsuranceCalculator _orderInsuranceCalculator;
-        // private Mock<IInsuranceCalculator<ProductDto>> _productCalculatorMock;
         private IInsuranceCalculator<ProductDto> _productInsuranceCalculator;
          [SetUp]
         public void PreTextInitialization()
         {
-            //_productCalculatorMock = new Mock<IInsuranceCalculator<ProductDto>>();
             _productInsuranceCalculator = new ProductInsuranceCalculator(salesPriceConfig: SalesConfigMock.Object,
                 productTypeConfig: ProductConfigMock.Object);
             _productInsuranceCalculator = new ProductInsuranceCalculator(salesPriceConfig: SalesConfigMock.Object,

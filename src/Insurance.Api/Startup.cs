@@ -1,4 +1,3 @@
-using Insurance.Api.Configuration;
 using Insurance.Api.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -23,7 +22,7 @@ namespace Insurance.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddConfigurationServices(Configuration);
+            services.AddConfigurationServices(configuration: Configuration);
             services.RegisterPollyPoliciesServices();
             services.AddHttpClientServices();
             services.AddProductServices();

@@ -6,10 +6,6 @@ using Microsoft.Extensions.Options;
 
 namespace Insurance.Api.BusinessRules.Insurance
 {
-    //public abstract class CalculatorBase
-    //{
-
-    //}
     public class OrderInsuranceCalculator: IInsuranceCalculator<List<ProductDto>>
     {
         private readonly IInsuranceCalculator<ProductDto> _productCalculator;

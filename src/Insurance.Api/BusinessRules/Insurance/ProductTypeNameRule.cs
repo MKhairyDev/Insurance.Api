@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using Insurance.Api.Configuration;
 using Insurance.Api.External.Models;
@@ -14,21 +13,22 @@ namespace Insurance.Api.BusinessRules.Insurance
         private bool _isSalesPriceCalculator;
         private ProductDto _product;
 
-        public ProductTypeNameRule(IOptionsMonitor<ProductTypeConfig>productConfig,
+        public ProductTypeNameRule(IOptionsMonitor<ProductTypeConfig> productConfig,
             IInsuranceRule<ProductDto> salesPriceCalculator)
         {
             if (productConfig == null)
-                throw new ArgumentNullException(nameof(productConfig));
-            _productConfig = productConfig.Get(ProductTypeConfig.ProductTypeRule);
+                throw new ArgumentNullException(paramName: nameof(productConfig));
+            _productConfig = productConfig.Get(name: ProductTypeConfig.ProductTypeRule);
             _salesPriceCalculator = salesPriceCalculator;
         }
 
         public bool Match(ProductDto product)
         {
-            _product = product ?? throw new ArgumentNullException(nameof(product));
+            _product = product ?? throw new ArgumentNullException(paramName: nameof(product));
             var isMatch = _product.ProductTypeDto.CanBeInsured &&
-                          _productConfig.ProductTypesLookup.Contains(_product.ProductTypeDto.Name, StringComparer.CurrentCultureIgnoreCase);
-            if (isMatch) _isSalesPriceCalculator = _salesPriceCalculator.Match(product);
+                          _productConfig.ProductTypesLookup.Contains(value: _product.ProductTypeDto.Name,
+                              comparer: StringComparer.CurrentCultureIgnoreCase);
+            if (isMatch) _isSalesPriceCalculator = _salesPriceCalculator.Match(entity: product);
 
             return isMatch;
         }

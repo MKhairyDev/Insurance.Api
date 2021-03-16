@@ -15,8 +15,6 @@ namespace Insurance.Api.DependencyInjection
                 config: configuration.GetSection(key: $"ExternalServices:{ExternalServicesConfig.ProductApi}"));
 
             //Business Rules
-            services.Configure<BusinessRulesConfig>(name: BusinessRulesConfig.BusinessRules,
-                config: configuration.GetSection(key: $"{BusinessRulesConfig.BusinessRules}"));
 
             services.Configure<SalesPriceConfig>(name: SalesPriceConfig.LessThanRule,
                 config: configuration.GetSection(key: $"BusinessRules:SalesRule:{SalesPriceConfig.LessThanRule}"));

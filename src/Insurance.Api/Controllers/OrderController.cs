@@ -15,23 +15,24 @@ namespace Insurance.Api.Controllers
         private readonly IInsuranceCalculator<List<ProductDto>> _orderCalculator;
         private readonly IProductService _productService;
 
-        public OrderController(IProductService productService, IInsuranceCalculator<List<ProductDto>> insuranceCalculator)
+        public OrderController(IProductService productService,
+            IInsuranceCalculator<List<ProductDto>> insuranceCalculator)
         {
-            _productService = productService ?? throw new ArgumentNullException(nameof(productService));
-            _orderCalculator = insuranceCalculator ?? throw new ArgumentNullException(nameof(insuranceCalculator));
+            _productService = productService ?? throw new ArgumentNullException(paramName: nameof(productService));
+            _orderCalculator = insuranceCalculator ??
+                               throw new ArgumentNullException(paramName: nameof(insuranceCalculator));
         }
 
 
         [HttpGet]
         public async Task<ActionResult<float>> CalculateInsurance([FromQuery(Name = "id")] List<int> productsId)
         {
-
-            var productsList = await _productService.GetProductsWithProductTypeAsync(productsId);
+            var productsList = await _productService.GetProductsWithProductTypeAsync(products: productsId);
             if (productsList == null)
                 return NotFound();
-            var insuranceValue = _orderCalculator.Calculate(productsList);
+            var insuranceValue = _orderCalculator.Calculate(entity: productsList);
 
-            return Ok(insuranceValue);
+            return Ok(value: insuranceValue);
         }
     }
 }
