@@ -2,7 +2,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Insurance.Api.Configuration;
 using Insurance.Api.External;
-using Insurance.Api.External.Models;
+using Insurance.Api.Models;
 using Insurance.Api.UnitTests.Handlers;
 using Microsoft.Extensions.Options;
 using Moq;

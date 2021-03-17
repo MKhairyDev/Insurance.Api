@@ -1,7 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using Insurance.Api.BusinessRules.Insurance;
-using Insurance.Api.External.Models;
+using Insurance.Api.Models;
 using Insurance.Api.Services;
 using Microsoft.AspNetCore.Mvc;
 

@@ -1,6 +1,6 @@
 ﻿using System;
 using Insurance.Api.Configuration;
-using Insurance.Api.External.Models;
+using Insurance.Api.Models;
 using Microsoft.Extensions.Options;
 
 namespace Insurance.Api.BusinessRules.Insurance

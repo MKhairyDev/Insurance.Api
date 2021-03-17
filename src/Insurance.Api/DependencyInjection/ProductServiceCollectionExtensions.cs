@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Insurance.Api.BusinessRules.Insurance;
-using Insurance.Api.External.Models;
+using Insurance.Api.Models;
 using Insurance.Api.Services;
 using Microsoft.Extensions.DependencyInjection;
 

@@ -6,7 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Insurance.Api.Configuration;
 using Insurance.Api.Extensions;
-using Insurance.Api.External.Models;
+using Insurance.Api.Models;
 using Microsoft.Extensions.Options;
 using Utilities.Polly.Exceptions;
 

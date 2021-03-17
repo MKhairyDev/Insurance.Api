@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using Insurance.Api.External.Models;
+using Insurance.Api.Models;
 
 namespace Insurance.Api.External
 {

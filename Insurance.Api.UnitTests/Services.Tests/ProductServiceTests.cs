@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Insurance.Api.External;
-using Insurance.Api.External.Models;
+using Insurance.Api.Models;
 using Insurance.Api.Services;
 using Microsoft.Extensions.Logging;
 using Moq;

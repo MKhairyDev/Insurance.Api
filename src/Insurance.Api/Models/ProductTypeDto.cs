@@ -1,4 +1,4 @@
-namespace Insurance.Api.External.Models
+namespace Insurance.Api.Models
 {
     public class ProductTypeDto
     {

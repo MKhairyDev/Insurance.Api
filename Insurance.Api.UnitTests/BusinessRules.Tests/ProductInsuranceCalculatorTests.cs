@@ -1,5 +1,5 @@
 ﻿using Insurance.Api.BusinessRules.Insurance;
-using Insurance.Api.External.Models;
+using Insurance.Api.Models;
 using Insurance.Api.UnitTests.BusinessRules.Tests.TestData;
 using NUnit.Framework;
 

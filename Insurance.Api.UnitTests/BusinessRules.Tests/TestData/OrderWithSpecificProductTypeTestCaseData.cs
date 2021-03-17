@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Insurance.Api.External.Models;
+using Insurance.Api.Models;
 using NUnit.Framework;
 
 namespace Insurance.Api.UnitTests.BusinessRules.Tests.TestData

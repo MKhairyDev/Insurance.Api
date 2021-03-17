@@ -1,0 +1,9 @@
+C:\Mine\Coolblue\net-interviewing-project-v2\Insurance.Domain\bin\Debug\netstandard2.1\Insurance.Domain.deps.json
+C:\Mine\Coolblue\net-interviewing-project-v2\Insurance.Domain\bin\Debug\netstandard2.1\Insurance.Domain.dll
+C:\Mine\Coolblue\net-interviewing-project-v2\Insurance.Domain\bin\Debug\netstandard2.1\Insurance.Domain.pdb
+C:\Mine\Coolblue\net-interviewing-project-v2\Insurance.Domain\obj\Debug\netstandard2.1\Insurance.Domain.csprojAssemblyReference.cache
+C:\Mine\Coolblue\net-interviewing-project-v2\Insurance.Domain\obj\Debug\netstandard2.1\Insurance.Domain.AssemblyInfoInputs.cache
+C:\Mine\Coolblue\net-interviewing-project-v2\Insurance.Domain\obj\Debug\netstandard2.1\Insurance.Domain.AssemblyInfo.cs
+C:\Mine\Coolblue\net-interviewing-project-v2\Insurance.Domain\obj\Debug\netstandard2.1\Insurance.Domain.csproj.CoreCompileInputs.cache
+C:\Mine\Coolblue\net-interviewing-project-v2\Insurance.Domain\obj\Debug\netstandard2.1\Insurance.Domain.dll
+C:\Mine\Coolblue\net-interviewing-project-v2\Insurance.Domain\obj\Debug\netstandard2.1\Insurance.Domain.pdb

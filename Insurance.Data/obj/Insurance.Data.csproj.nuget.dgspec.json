@@ -1,0 +1,148 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Mine\\Coolblue\\net-interviewing-project-v2\\Insurance.Data\\Insurance.Data.csproj": {}
+  },
+  "projects": {
+    "C:\\Mine\\Coolblue\\net-interviewing-project-v2\\Insurance.Data\\Insurance.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Mine\\Coolblue\\net-interviewing-project-v2\\Insurance.Data\\Insurance.Data.csproj",
+        "projectName": "Insurance.Data",
+        "projectPath": "C:\\Mine\\Coolblue\\net-interviewing-project-v2\\Insurance.Data\\Insurance.Data.csproj",
+        "packagesPath": "C:\\Users\\moemen.saad\\.nuget\\packages\\",
+        "outputPath": "C:\\Mine\\Coolblue\\net-interviewing-project-v2\\Insurance.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\moemen.saad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://hccm.pkgs.visualstudio.com/_packaging/CAVE/nuget/v3/index.json": {},
+          "https://hccm.pkgs.visualstudio.com/_packaging/Danube/nuget/v3/index.json": {},
+          "https://nuget.telerik.com/nuget": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "C:\\Mine\\Coolblue\\net-interviewing-project-v2\\Insurance.Domain\\Insurance.Domain.csproj": {
+                "projectPath": "C:\\Mine\\Coolblue\\net-interviewing-project-v2\\Insurance.Domain\\Insurance.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Mine\\Coolblue\\net-interviewing-project-v2\\Insurance.Domain\\Insurance.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Mine\\Coolblue\\net-interviewing-project-v2\\Insurance.Domain\\Insurance.Domain.csproj",
+        "projectName": "Insurance.Domain",
+        "projectPath": "C:\\Mine\\Coolblue\\net-interviewing-project-v2\\Insurance.Domain\\Insurance.Domain.csproj",
+        "packagesPath": "C:\\Users\\moemen.saad\\.nuget\\packages\\",
+        "outputPath": "C:\\Mine\\Coolblue\\net-interviewing-project-v2\\Insurance.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\moemen.saad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://hccm.pkgs.visualstudio.com/_packaging/CAVE/nuget/v3/index.json": {},
+          "https://hccm.pkgs.visualstudio.com/_packaging/Danube/nuget/v3/index.json": {},
+          "https://nuget.telerik.com/nuget": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

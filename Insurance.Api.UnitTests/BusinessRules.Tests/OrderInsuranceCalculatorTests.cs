@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Insurance.Api.BusinessRules.Insurance;
 using Insurance.Api.Configuration;
-using Insurance.Api.External.Models;
+using Insurance.Api.Models;
 using Insurance.Api.UnitTests.BusinessRules.Tests.TestData;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
