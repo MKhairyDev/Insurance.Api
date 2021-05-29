@@ -18,14 +18,14 @@ namespace Insurance.Api.UnitTests.Controllers.Tests
         {
             _productServiceMock = new Mock<IProductService>();
             _orderCalculatorMock = new Mock<IInsuranceCalculator<List<ProductDto>>>();
-            _productController = new OrderController(productService: _productServiceMock.Object,
+            _orderController = new OrderController(productService: _productServiceMock.Object,
                 insuranceCalculator: _orderCalculatorMock.Object);
         }
 
         private Mock<IProductService> _productServiceMock;
         private Mock<IInsuranceCalculator<List<ProductDto>>> _orderCalculatorMock;
 
-        private OrderController _productController;
+        private OrderController _orderController;
 
         [Test]
         public async Task CalculateInsurance_WhenProductIsdNotExist_ShouldReturn_HttpNotFound()
@@ -35,7 +35,7 @@ namespace Insurance.Api.UnitTests.Controllers.Tests
                 .ReturnsAsync(value: It.IsAny<List<ProductDto>>());
 
             //Act
-            var actualResult = await _productController.CalculateInsurance(productsId: new List<int> {1});
+            var actualResult = await _orderController.CalculateInsurance(productsId: new List<int> {1});
 
             //Assert
             Assert.IsInstanceOf<NotFoundResult>(actual: actualResult.Result);
@@ -52,7 +52,7 @@ namespace Insurance.Api.UnitTests.Controllers.Tests
                 .Returns(value: expectedInsuranceValue);
 
             //Act
-            var actualResult = await _productController.CalculateInsurance(productsId: new List<int> {1});
+            var actualResult = await _orderController.CalculateInsurance(productsId: new List<int> {1});
 
             //Assert
             Assert.IsInstanceOf<ActionResult<float>>(actual: actualResult);
