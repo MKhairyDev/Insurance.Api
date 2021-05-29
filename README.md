@@ -1,4 +1,14 @@
-## Insurance.Api
+# Insurance.Api
+- REST API which allows us to calculate insurance values so that we get money back in case the product gets lost or damaged before reaching the customers .
+- Designed in away to be testable, maintable , extensible as well as being self-healing and resilient in face of failures  
+# Technologies & Tools  used:
+- Asp.net core Web api
+- Entity Framework Core (v 3.1) with 'Microsoft.EntityFrameworkCore.Sqlite provider'.
+- Microsoft.EntityFrameworkCore.InMemory(For Testing)
+- Moq =>Moq is the most popular and friendly mocking framework for .NET(for testing)
+- MSTest.TestFramework.
+- Polly Liberary for resilience and transient fault handling.
+
 # Design Goal:
 -	separation of concern.
 - Leverages SOLID principles.
@@ -9,15 +19,19 @@
 - It also aligns well with “Single Responsibility principle” (class or a method should have one reason to change)
 - we now separate the rules from the rules processing logic as they are separate concerns so if we change how we process rules in general, that should go in rule processing class or method, however if we change the individual behavior of a particular rule, this should go inside the rule class.
 - Adding business rules in app through configuration file.
+ ### Business rules business logic has been developed with various design pattern:
+-	Rules pattern.
+-	Decorator pattern.
+-	Chain of responsibility pattern.
 - Rules could be dynamic, but we need to thing about how we will persist the rules and how we need user interface to allow them to be edited.
 
 ## Cross cutting concerns level:
 
-Asp.net core configuration:
+- Asp.net core configuration:
 Read configuration using Named option pattern through IOptionsMonitor interface (more details should be added)
 Named Option pattern is quite useful in situations like the one we have in the code (API’s Uri) as we have common configuration properties and avoid repeating those properties across multiple option classes.
-Asp.net core Logging
-resilience and transient fault handling
+- Asp.net core Logging
+## resilience and transient fault handling
 - Using Polly library:
 o	Polly is a library that will enable us to express resilience and transient fault handling policies such as Retry, Circuit Breaker, Timeout, Bulkhead Isolation, and Fallback in a fluent and thread-safe manner.
 - In .net core, there is a support for using Polly with the Http factory feature which will allow us to use Polly in a loosely coupled way by registering our policies and wrap it in our HTTP requests.
