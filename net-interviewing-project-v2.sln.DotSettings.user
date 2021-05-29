@@ -1,8 +1,0 @@
-﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=30db8c6b_002D6670_002D4781_002Da1e4_002D5adec20957e2/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GivenSalesPrice_WhenLessThanMinimumValue_InsuranceValueShouldBeZaro" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::CE34328E-6B6E-462A-9B27-8E5D3DC14996::net5.0::Insurance.Api.UnitTests.Controllers.Tests.InsuranceControllerTests.CalculateInsurance_WhenProductIdNotExist_ShouldReturn_HttpNotFound&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::CE34328E-6B6E-462A-9B27-8E5D3DC14996::net5.0::Insurance.Api.UnitTests.Controllers.Tests.InsuranceControllerTests.CalculateInsurance_WhenProductIdExist_ShouldReturn_OkObjectResult&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:Boolean x:Key="/Default/UserDictionary/Words/=Smartphones/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>
