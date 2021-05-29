@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{688513B6
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utilities.Polly", "src\Utilities.Polly\Utilities.Polly.csproj", "{3D4ABC36-E14F-4B00-92E0-F893C4ABA26A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Insurance.Api.UnitTests", "Insurance.Api.UnitTests\Insurance.Api.UnitTests.csproj", "{CE34328E-6B6E-462A-9B27-8E5D3DC14996}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Insurance.Api.UnitTests", "tests\Insurance.Api.UnitTests\Insurance.Api.UnitTests.csproj", "{CE34328E-6B6E-462A-9B27-8E5D3DC14996}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Insurance.Data", "Insurance.Data\Insurance.Data.csproj", "{CBDBB963-5012-49AA-A95B-2C5A43FC5FE6}"
 EndProject
